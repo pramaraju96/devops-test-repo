@@ -90,7 +90,7 @@ jobs:
                 SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
                 SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
                 SONAR_URL: ${{ secrets.SONAR_URL }}
-                SONAR_ORG_KEY: ${{ secrets.SONAR_ORG_KEY }}
+                # SONAR_ORG_KEY: ${{ secrets.SONAR_ORG_KEY }}
 
           - name: ServiceNow DevOps Sonar Scan Results
             #uses: ServiceNow/servicenow-devops-sonar@372997bc33a6029b9b3a2a3457646174569db452
@@ -104,7 +104,7 @@ jobs:
               context-github: ${{ toJSON(github) }}
               sonar-host-url: ${{ secrets.SONAR_URL }}
               sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
-              sonar-org-key: ${{ secrets.SONAR_ORG_KEY }}
+              # sonar-org-key: ${{ secrets.SONAR_ORG_KEY }}
 
           - name: Run JUnit Tests
             run: mvn test -Dmaven.test.failure.ignore=true surefire-report:report
