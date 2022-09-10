@@ -1,0 +1,72 @@
+// Artifact, Package and Change are in the same stage
+
+def artifactname = "artifact_devops_${env.BRANCH_NAME}.jar"
+def repoName = "repository_devops"
+def pipelineName = "pipeline_devops"
+def semanticVersion = "${env.BUILD_NUMBER}.0.0"
+def packageName = "package_devops_${env.BUILD_NUMBER}"
+def version = "${env.BUILD_NUMBER}.0"
+
+pipeline {
+    
+    agent any
+    
+    tools {
+        maven 'Maven'
+    }
+    
+    environment {
+        SCANNER_HOME = tool 'sonarScanner'
+    }  
+    stages {
+        
+        // Stage name: Build
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean compile'
+            }
+        }
+        
+        // Stage name: Test
+        stage('Test') {
+
+            steps {
+                sh 'mvn test'
+                sonarSummaries()
+
+                //snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"branchName":"master"}""")
+                //snDevOpsArtifact artifactsPayload: '{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}", "repositoryName": "${repoName}"}], "branchName": "master"}'
+                //snDevOpsPackage(name: "${packageName}-${env.BUILD_NUMBER}", artifactsPayload: """{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}], "branchName":"master"}""")
+                //snDevOpsPackage artifactsPayload: '{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}", "repositoryName": "${repoName}"}], "branchName": "master"}', name: '${packageName}-${env.BUILD_NUMBER}'
+            }
+
+            post {
+                always {
+                    junit "**/target/surefire-reports/*.xml"
+                }
+            }
+        }
+
+        // Stage name: Deploy
+        stage('Deploy') {
+            steps {
+                echo 'Artifacts, Package and Change are in the same stage/step'
+
+                snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"branchName":"master"}""")
+                snDevOpsPackage(name: "${packageName}-${env.BUILD_NUMBER}", artifactsPayload: """{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}], "branchName":"master"}""")
+
+                snDevOpsChange(ignoreErrors:false)
+            }
+        }
+    }
+}
+
+def sonarSummaries() {
+    // withSonarQubeEnv('Sonar_Cloud') {
+    //     sh '${SCANNER_HOME}/bin/sonar-scanner -Dproject.settings=${SCANNER_HOME}/conf/qa-sonar-scanner-cloud.properties'
+    // }
+    withSonarQubeEnv('sonarQube_local') {
+        sh '${SCANNER_HOME}/bin/sonar-scanner -Dproject.settings=${SCANNER_HOME}/conf/qa-sonar-scanner.properties'
+        // sh '${SCANNER_HOME}/bin/sonar-scanner -Dproject.settings=${SCANNER_HOME}/conf/sonar-scanner.properties'
+    }
+}
