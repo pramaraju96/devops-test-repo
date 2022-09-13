@@ -3,19 +3,19 @@
 
 name: Pull requests events trigger workflow
 
-on:
+#on:
 #   push:
 #     branches: [ main ]
-    pull_request:
-      branches: [ main ]
-      types: [closed]
+#     pull_request:
+#       branches: [ main ]
+#       types: [closed]
 #   push:
 #     branches:
 #       - main
 #   pull_request:
 #     types: [opened, synchronize, reopened]
 
-# on: workflow_dispatch  
+on: workflow_dispatch  
     
 jobs:
 #  if_merged:
