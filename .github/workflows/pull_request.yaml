@@ -6,9 +6,9 @@ name: Pull requests events trigger workflow
 on:
 #   push:
 #     branches: [ main ]
-#    pull_request:
-#      branches: [ main ]
-#      types: [closed]
+    pull_request:
+      branches: [ main ]
+      types: [closed]
 #   push:
 #     branches:
 #       - main
