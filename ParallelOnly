@@ -10,7 +10,7 @@ def packageName2 = "package_two_${env.BUILD_NUMBER}"
 def repoName2 = "repo_two"
 
 def artifactname3 = "artifact_name_three.jar"
-def packageName3 = "pkg_three_${env.BUILD_NUMBER}"
+def packageName3 = "package_three_${env.BUILD_NUMBER}"
 def repoName3 = "repo_three"
 
 pipeline {
