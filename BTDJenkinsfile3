@@ -1,10 +1,10 @@
 // Artifact, Package are in previous stage and Change is in next stage
 
-def artifactname = "artifact_devops_${env.BRANCH_NAME}.jar"
+def artifactname = "artifact_devops_${env.BUILD_NUMBER}.jar"
 def repoName = "repository_devops"
 def pipelineName = "pipeline_devops"
 def semanticVersion = "${env.BUILD_NUMBER}.0.0"
-def packageName = "package_devops_${env.BRANCH_NAME}_${env.BUILD_NUMBER}"
+def packageName = "package_devops_${env.BUILD_NUMBER}"
 def version = "${env.BUILD_NUMBER}.0"
 
 pipeline {
@@ -39,8 +39,8 @@ pipeline {
                 //snDevOpsPackage(name: "${packageName}-${env.BUILD_NUMBER}", artifactsPayload: """{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}], "branchName":"${env.BRANCH_NAME}"}""")
                 //snDevOpsPackage artifactsPayload: '{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}", "repositoryName": "${repoName}"}], "branchName": "${env.BRANCH_NAME}"}', name: '${packageName}-${env.BUILD_NUMBER}'
                 
-                snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"branchName":"${env.BRANCH_NAME}"}""")
-                snDevOpsPackage(name: "${packageName}", artifactsPayload: """{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}], "branchName":"${env.BRANCH_NAME}"}""")
+                snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"branchName":"main"}""")
+                snDevOpsPackage(name: "${packageName}", artifactsPayload: """{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}], "branchName":"main"}""")
             }
 
             post {
