@@ -104,7 +104,7 @@ jobs:
           sonar-org-key: ${{ secrets.SONAR_ORG_KEY }}
 
       - name: Run JUnit Tests
-        run: mvn '-Dtest=JUnitTest*.java' test -Dmaven.test.failure.ignore=true surefire-report:report
+        run: mvn clean '-Dtest=JUnitTest*.java' test -Dmaven.test.failure.ignore=true surefire-report:report
         
       - name: ServiceNow DevOps Unit Test Results
         uses: ServiceNow/servicenow-devops-test-report/@main
@@ -115,7 +115,7 @@ jobs:
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: 'Test'
-          xml-report-filename: target/surefire-reports/testng-junit-results/testng-results.xml
+          xml-report-filename: target/surefire-reports/testng-results.xml
           
   integrationTest:
     needs: test
@@ -131,7 +131,7 @@ jobs:
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: 'Integration Tests'
-          artifacts: ' [{"name": "com:autoclaim","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
+          artifacts: ' [{"name": "artifact-${{ github.ref_name }}-${{ github.run_number}}.jar","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
 
       - name: Register Package
         uses: ServiceNow/servicenow-devops-register-package@main
@@ -142,8 +142,8 @@ jobs:
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: 'Integration Tests'
-          artifacts: ' [{"name": "com:autoclaim","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
-          package-name: 'autoclaim.war'
+          artifacts: ' [{"name": "artifact-${{ github.ref_name }}-${{ github.run_number}}.jar","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
+          package-name: 'package-${{ github.ref_name }}-${{ github.run_number}}.zip'
   
   loadTest:
     needs: integrationTest
@@ -160,7 +160,7 @@ jobs:
         run: mvn -B test --file pom.xml
       
       - name: Run JUnit Tests
-        run: mvn '-Dtest=PerformanceTest*.java' test -Dmaven.test.failure.ignore=true surefire-report:report
+        run: mvn clean '-Dtest=PerformanceTest*.java' test -Dmaven.test.failure.ignore=true surefire-report:report
         
       - name: ServiceNow DevOps Unit Test Results
         uses: ServiceNow/servicenow-devops-test-report/@main
@@ -171,7 +171,7 @@ jobs:
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: 'k6 Load Test'
-          xml-report-filename: target/surefire-reports/testng-junit-results/testng-results.xml
+          xml-report-filename: target/surefire-reports/testng-results.xml
 
       - name: Run local k6 test
         uses: grafana/k6-action@v0.2.0
