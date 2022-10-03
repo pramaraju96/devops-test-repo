@@ -25,16 +25,16 @@ public class PerformanceTestOne {
 	}
 
 	@Test
-	public void test1() {
-		System.out.println("Inside test1");
+	public void perfTest1() {
+		System.out.println("Inside perftest1");
 	}
 	@Test
-	public void test2() {
-		System.out.println("Inside test2");
+	public void perfTest2() {
+		System.out.println("Inside perftest2");
 	}
 	@Test
-	public void test3() {
-		System.out.println("3");
+	public void perfTest3() {
+		System.out.println("Inside perftest3");
 	}
 
 }
