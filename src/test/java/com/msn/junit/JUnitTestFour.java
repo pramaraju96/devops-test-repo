@@ -1,10 +1,11 @@
+package com.msn.junit;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TestOne {
+public class JUnitTestFour {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -32,7 +33,7 @@ public class TestOne {
 	}
 	@Test
 	public void test3() {
-		System.out.println("3");
+		System.out.println("Inside test3");
 	}
 
 }

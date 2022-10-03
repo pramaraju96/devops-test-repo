@@ -1,10 +1,12 @@
+package com.msn.performance;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TestTwo {
+public class PerformanceTestOne {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -32,7 +34,7 @@ public class TestTwo {
 	}
 	@Test
 	public void test3() {
-		System.out.println("Inside test3");
+		System.out.println("3");
 	}
 
 }

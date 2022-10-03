@@ -1,10 +1,11 @@
+package com.msn.junit;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TestOne {
+public class JUnitTestThree {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

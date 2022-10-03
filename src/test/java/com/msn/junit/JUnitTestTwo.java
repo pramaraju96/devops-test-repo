@@ -1,4 +1,4 @@
-package com.msn.MSNAutomation;
+package com.msn.junit;
 
 import org.junit.After;
 import org.junit.Before;
@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AppTest2 
+public class JUnitTestTwo 
     extends TestCase
 {
     /**
@@ -18,7 +18,7 @@ public class AppTest2
      *
      * @param testName name of the test case
      */
-    public AppTest2( String testName )
+    public JUnitTestTwo( String testName )
     {
         super( testName );
     }
@@ -28,7 +28,7 @@ public class AppTest2
      */
     public static Test suite()
     {
-        return new TestSuite( AppTest.class );
+        return new TestSuite( JUnitTestOne.class );
     }
 
     /**
