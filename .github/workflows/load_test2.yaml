@@ -1,4 +1,4 @@
-name: Run load tests with GitHub Actions
+name: K6 Load Test on GitHub Actions
 
 on: workflow_dispatch  
     
