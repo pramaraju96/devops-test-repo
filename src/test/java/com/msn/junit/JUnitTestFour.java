@@ -24,16 +24,16 @@ public class JUnitTestFour {
 	}
 
 	@Test
-	public void test1() {
-		System.out.println("Inside test1");
+	public void junitFourTest1() {
+		System.out.println("Inside junitfourtest1");
 	}
 	@Test
-	public void test2() {
-		System.out.println("Inside test2");
+	public void junitFourTest2() {
+		System.out.println("Inside junitfourtest2");
 	}
 	@Test
-	public void test3() {
-		System.out.println("Inside test3");
+	public void junitFourTest3() {
+		System.out.println("Inside junitfourtest3");
 	}
 
 }
