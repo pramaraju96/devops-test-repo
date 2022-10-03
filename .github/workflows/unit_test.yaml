@@ -52,7 +52,7 @@ jobs:
           job-name: 'Test'
           xml-report-filename: target/surefire-reports/testng-junit-results/testng-results.xml
     
- test2:
+  test2:
     name: Test2
     needs: test1
     runs-on: ubuntu-latest
