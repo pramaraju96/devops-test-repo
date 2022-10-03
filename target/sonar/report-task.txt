@@ -1,6 +1,0 @@
-projectKey=devops-test-repo
-serverUrl=http://sonarqube1.sndevops.xyz
-serverVersion=8.9.6.50800
-dashboardUrl=http://sonarqube1.sndevops.xyz/dashboard?id=devops-test-repo
-ceTaskId=AYDwla9q20UZhCERY6UR
-ceTaskUrl=http://sonarqube1.sndevops.xyz/api/ce/task?id=AYDwla9q20UZhCERY6UR
