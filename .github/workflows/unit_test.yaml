@@ -39,7 +39,7 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: Run JUnit Tests
-        run: mvn -Dtest=MSNAutomation test -Dmaven.test.failure.ignore=true surefire-report:report
+        run: mvn -Dtest=com.msn.junit.JUnit*.java test -Dmaven.test.failure.ignore=true surefire-report:report
         
       - name: ServiceNow DevOps Unit Test Results
         uses: ServiceNow/servicenow-devops-test-report/@main
@@ -62,7 +62,7 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: Run JUnit Tests
-        run: mvn -Dtest=performance test -Dmaven.test.failure.ignore=true surefire-report:report
+        run: mvn -Dtest=com.msn.performance.Performance*.java test -Dmaven.test.failure.ignore=true surefire-report:report
         
       - name: ServiceNow DevOps Unit Test Results
         uses: ServiceNow/servicenow-devops-test-report/@main
