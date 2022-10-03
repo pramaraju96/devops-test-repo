@@ -1,4 +1,4 @@
-package com.msn.MSNAutomation;
+package com.msn.application;
 
 /**
  * Hello world!
