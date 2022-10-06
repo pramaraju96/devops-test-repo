@@ -45,6 +45,8 @@ pipeline {
                         echo "IN STAGE1 PARALLEL CHILD2"
                         sh 'mvn test'
                         snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname2}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName2}"}],"stageName": "STAGE1_PARENT/STAGE1_PARALLEL_CHILD2","branchName":"main"}""")
+                        snDevOpsPackage(name: "${packageName}", artifactsPayload: """{"artifacts":[{"name": "${artifactname2}", "version": "1.${env.BUILD_NUMBER}", "repositoryName": "${repoName2}"}],"stageName": "STAGE1_PARENT/STAGE1_PARALLEL_CHILD2", "branchName":"main"}""")
+                        // add wait time in case package is not built
                         snDevOpsChange()
                     }
                     post{
