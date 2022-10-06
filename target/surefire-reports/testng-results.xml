@@ -2,37 +2,37 @@
 <testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="79" started-at="2022-10-04T01:00:55 IST" finished-at="2022-10-04T01:00:55 IST">
+  <suite name="Surefire suite" duration-ms="80" started-at="2022-10-04T01:21:14 IST" finished-at="2022-10-04T01:21:14 IST">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="79" started-at="2022-10-04T01:00:55 IST" finished-at="2022-10-04T01:00:55 IST">
+    <test name="Surefire test" duration-ms="80" started-at="2022-10-04T01:21:14 IST" finished-at="2022-10-04T01:21:14 IST">
       <class name="com.msn.junit.JUnitTestFour">
-        <test-method status="PASS" signature="test2()" name="test2" duration-ms="0" started-at="2022-10-04T01:00:55 IST" finished-at="2022-10-04T01:00:55 IST">
+        <test-method status="PASS" signature="junitFourTest2()" name="junitFourTest2" duration-ms="1" started-at="2022-10-04T01:21:14 IST" finished-at="2022-10-04T01:21:14 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="test3()" name="test3" duration-ms="1" started-at="2022-10-04T01:00:55 IST" finished-at="2022-10-04T01:00:55 IST">
+        </test-method> <!-- junitFourTest2 -->
+        <test-method status="PASS" signature="junitFourTest3()" name="junitFourTest3" duration-ms="1" started-at="2022-10-04T01:21:14 IST" finished-at="2022-10-04T01:21:14 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test3 -->
-        <test-method status="PASS" signature="test1()" name="test1" duration-ms="0" started-at="2022-10-04T01:00:55 IST" finished-at="2022-10-04T01:00:55 IST">
+        </test-method> <!-- junitFourTest3 -->
+        <test-method status="PASS" signature="junitFourTest1()" name="junitFourTest1" duration-ms="1" started-at="2022-10-04T01:21:14 IST" finished-at="2022-10-04T01:21:14 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
+        </test-method> <!-- junitFourTest1 -->
       </class> <!-- com.msn.junit.JUnitTestFour -->
       <class name="com.msn.junit.JUnitTestThree">
-        <test-method status="PASS" signature="test1()" name="test1" duration-ms="18" started-at="2022-10-04T01:00:55 IST" finished-at="2022-10-04T01:00:55 IST">
+        <test-method status="PASS" signature="junitThreeTest1()" name="junitThreeTest1" duration-ms="19" started-at="2022-10-04T01:21:14 IST" finished-at="2022-10-04T01:21:14 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="test2()" name="test2" duration-ms="19" started-at="2022-10-04T01:00:55 IST" finished-at="2022-10-04T01:00:55 IST">
+        </test-method> <!-- junitThreeTest1 -->
+        <test-method status="PASS" signature="junitThreeTest2()" name="junitThreeTest2" duration-ms="19" started-at="2022-10-04T01:21:14 IST" finished-at="2022-10-04T01:21:14 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="test3()" name="test3" duration-ms="18" started-at="2022-10-04T01:00:55 IST" finished-at="2022-10-04T01:00:55 IST">
+        </test-method> <!-- junitThreeTest2 -->
+        <test-method status="PASS" signature="junitThreeTest3()" name="junitThreeTest3" duration-ms="19" started-at="2022-10-04T01:21:14 IST" finished-at="2022-10-04T01:21:14 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test3 -->
+        </test-method> <!-- junitThreeTest3 -->
       </class> <!-- com.msn.junit.JUnitTestThree -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
