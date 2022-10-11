@@ -3,18 +3,18 @@
 
 name: Java CI with Maven
 
-on:
+# on:
 #   push:
 #     branches: [ main ]
-   pull_request:
-     branches: [ master ]
+#    pull_request:
+#      branches: [ master ]
 #   push:
 #     branches:
 #       - main
 #   pull_request:
 #     types: [opened, synchronize, reopened]
 
-# on: workflow_dispatch  
+on: workflow_dispatch  
     
 jobs:
   build:
