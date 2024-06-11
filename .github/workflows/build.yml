@@ -1,4 +1,4 @@
-name: Firebase Continuous Deployment
+name: Java CI with Maven
 
 on: workflow_dispatch
   # push:
