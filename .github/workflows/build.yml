@@ -319,7 +319,7 @@ jobs:
           # start_date: Enter the planned start date
           # end_date: Enter the planned end date
           abortOnChangeCreationFailure: false
-          deployment-gate: '{"environment":"production","jobName":"PostChange"}'
+          # deployment-gate: '{"environment":"production","jobName":"PostChange"}'
 
       - name: Output of ServiceNow DevOps Change Automation
         run: |
@@ -330,7 +330,7 @@ jobs:
       #if: github.event.pull_request.merged == true
       name: PostChange
       runs-on: ubuntu-latest
-      environment: production
+      # environment: production
       needs: change
       steps:
           - name: Run deployment scripts
