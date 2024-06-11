@@ -51,7 +51,7 @@ jobs:
           # Devops Integration User Password
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
           # Devops Integration Token
-          devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
+          #devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
           # ServiceNow Instance Name
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           # Orchestration Tool Id
@@ -78,7 +78,7 @@ jobs:
           # Devops Integration User Password
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
           # Devops Integration Token
-          devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
+          #devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
           # ServiceNow Instance URL
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           # Orchestration Tool Id
@@ -139,7 +139,7 @@ jobs:
           # Devops Integration User Password
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
           # Devops Integration Token
-          devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}      
+          #devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}      
           # ServiceNow Instance URL
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           # Orchestration Tool Id
@@ -227,7 +227,7 @@ jobs:
             # Devops Integration User Password
             devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
             # Devops Integration Token
-            devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
+            #devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
             # ServiceNow Instance URL
             instance-url: ${{ secrets.SN_INSTANCE_URL }}
             # Orchestration Tool Id
@@ -257,7 +257,7 @@ jobs:
           # Devops Integration User Password
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
           # Devops Integration Token
-          devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
+          #devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
           # ServiceNow Instance URL
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           # Orchestration Tool Id of the tool created in ServiceNow
@@ -303,7 +303,7 @@ jobs:
           # Devops Integration User Password
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
           # Devops Integration Token
-          devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
+          #devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
           # ServiceNow Instance URL
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           # Orchestration Tool Id
@@ -353,7 +353,7 @@ jobs:
           # Devops Integration User Password
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
           # Devops Integration Token
-          devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}        
+          #devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}        
           # ServiceNow Instance URL
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           # Orchestration Tool Id
@@ -380,7 +380,7 @@ jobs:
           # Devops Integration User Password
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
           # Devops Integration Token
-          devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}        
+          #devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}        
           # ServiceNow Instance URL
           instance-url: ${{ secrets.SN_INSTANCE_URL }}
           # Orchestration Tool Id of the tool created in ServiceNow
@@ -388,7 +388,8 @@ jobs:
           # Github Context
           context-github: ${{ toJSON(github) }}
           # Change Request Number to be Updated
-          change-request-number: ${{ steps.create_change.outputs.change-request-number }}
+          # change-request-number: ${{ steps.create_change.outputs.change-request-number }}
+          change-request-number: "CHG0030012"
           # The customized inputs to create change with the requested details.
           change-request-details: '{ "short_description":"Updated short_description abcdefghijklmnopqrstuvwxyz" }'
 
